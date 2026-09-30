@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fa">
+  <meta name="description" content="Aegis network configuration compliance auditor demo">
+  <title>Aegis — Network Security Posture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#" aria-label="Aegis home">
+        <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2.8 27 7v8.7c0 7-4.6 11.5-11 14.2C9.6 27.2 5 22.7 5 15.7V7l11-4.2Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m11.2 16.2 3.1 3.1 6.7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="brand-copy"><strong>aegis<span>.</span></strong><small>NETWORK ASSURANCE</small></span>
+      </a>
+      <div class="workspace-select"><span class="workspace-dot"></span><span><small>WORKSPACE</small><strong>NTRO · Production</strong></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+      <nav class="side-nav" aria-label="Main navigation">
+        <p class="nav-label">OVERVIEW</p>
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">▦</span>Dashboard</button>
+        <button class="nav-item" data-page="findings"><span class="nav-icon">⌁</span>Findings <span class="nav-count" id="nav-finding-count">08</span></button>
+        <button class="nav-item" data-page="devices"><span class="nav-icon">⌘</span>Devices</button>
+        <p class="nav-label nav-label-spaced">GOVERNANCE</p>
+        <button class="nav-item" data-page="ai-review"><span class="nav-icon">✳</span>AI review <span class="nav-dot"></span></button>
+        <button class="nav-item" data-page="reports"><span class="nav-icon">▤</span>Reports</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="privacy-card"><span class="privacy-icon">◈</span><div><strong>Private by design</strong><p>Configs stay in your browser.</p></div><span class="privacy-indicator"></span></div>
+        <button class="profile-button"><span class="avatar">AK</span><span class="profile-text"><strong>Arjun Kumar</strong><small>Security analyst</small></span><span class="profile-more">···</span></button>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <div class="breadcrumb"><span>Workspace</span><span class="crumb-slash">/</span><strong id="breadcrumb-page">Dashboard</strong></div>
+        <div class="top-actions">
+          <div class="live-status"><span></span> SYSTEM OPERATIONAL</div>
+          <button class="icon-button" id="help-button" aria-label="About this demo" title="About this demo">?</button>
+          <button class="avatar avatar-small" aria-label="Arjun Kumar">AK</button>
+        </div>
+      </header>
+
+      <main>
+        <div class="demo-notice"><span class="demo-notice-icon">i</span><span><strong>DEMO ENVIRONMENT</strong> &nbsp;Illustrative sample data — findings and benchmark mappings are for demonstration, not an official assessment.</span><button id="dismiss-notice" aria-label="Dismiss notice">×</button></div>
+
+        <section class="page-view visible" id="page-dashboard">
+          <div class="page-heading">
+            <div><div class="eyebrow"><span class="eyebrow-line"></span>WEDNESDAY, SEPTEMBER 30, 2026</div><h1>Your network, <span>at a glance.</span></h1><p class="page-subtitle">A clear view of configuration risk across your multi-vendor estate.</p></div>
+            <button class="button button-primary" data-open-scan><span class="button-plus">＋</span> Run a new scan</button>
+          </div>
+
+          <section class="hero-panel">
+            <div class="hero-copy"><div class="hero-tag"><span></span> NETWORK POSTURE <span class="hero-tag-sep">·</span> LIVE OVERVIEW</div><h2>Clarity across<br>every <em>connection.</em></h2><p>One normalized view of security posture. Built for the networks that can't afford blind spots.</p><div class="hero-actions"><button class="button button-light" data-open-scan>Scan a configuration <span>↗</span></button><span class="hero-microcopy"><span class="micro-check">✓</span> Read-only analysis</span></div></div>
+            <div class="hero-visual" aria-hidden="true"><div class="orbital-glow"></div><div class="orbital-ring ring-one"></div><div class="orbital-ring ring-two"></div><div class="orbital-ring ring-three"></div><div class="orbital-core"><span class="core-shield"><svg viewBox="0 0 40 44"><path d="M20 2 36 8v12c0 10-6.7 17-16 22C10.7 37 4 30 4 20V8l16-6Z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m13 21 5 5 10-11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="core-label">POSTURE<br><strong>OBSERVED</strong></span></div><span class="orbit-node node-a"></span><span class="orbit-node node-b"></span><span class="orbit-node node-c"></span><div class="orbit-chip chip-a"><span></span> 04 VENDORS</div><div class="orbit-chip chip-b"><span></span> POLICY ENGINE</div><div class="orbit-chip chip-c"><span>✓</span> SNAPSHOT SAFE</div></div>
+            <div class="hero-footer"><span><i></i> Last complete scan <strong>Today, 09:42 IST</strong></span><span>SCAN ID <strong class="mono">AG-260930-0942</strong></span></div>
+          </section>
+
+          <div class="metric-grid">
+            <article class="metric-card"><div class="metric-top"><span class="metric-label">CONFIGURATIONS REVIEWED</span><span class="metric-icon icon-blue">⌘</span></div><div class="metric-value" id="metric-devices">24<span class="metric-unit"> devices</span></div><div class="metric-foot"><span class="metric-change positive">↗ 3</span><span>since last review</span><span class="metric-spark spark-blue"></span></div></article>
+            <article class="metric-card"><div class="metric-top"><span class="metric-label">CONTROL COVERAGE</span><span class="metric-icon icon-green">◎</span></div><div class="metric-value" id="metric-coverage">86<span class="metric-unit">%</span></div><div class="metric-foot"><span class="metric-change positive">↗ 4.2%</span><span>vs. previous scan</span><span class="metric-spark spark-green"></span></div></article>
+            <article class="metric-card"><div class="metric-top"><span class="metric-label">OPEN FINDINGS</span><span class="metric-icon icon-orange">⌁</span></div><div class="metric-value" id="metric-findings">08<span class="metric-unit"> issues</span></div><div class="metric-foot"><span class="metric-change negative">03 high</span><span>across 4 vendors</span><span class="metric-spark spark-orange"></span></div></article>
+            <article class="metric-card"><div class="metric-top"><span class="metric-label">FRAMEWORKS MAPPED</span><span class="metric-icon icon-purple">✳</span></div><div class="metric-value">04<span class="metric-unit"> standards</span></div><div class="framework-mini"><span>CIS</span><span>NIST</span><span>STIG</span><span>ISO</span></div></article>
+          </div>
+
+          <div class="insights-grid">
+            <article class="surface-card posture-card">
+              <div class="card-heading"><div><span class="section-kicker">CONTROL ALIGNMENT</span><h3>Framework posture</h3></div><button class="text-button" data-go="reports">Full report <span>↗</span></button></div>
+              <div class="framework-chart">
+                <div class="framework-row"><div class="framework-name"><span class="framework-logo cis-logo">C</span><span><strong>CIS Benchmarks</strong><small>36 of 42 controls met</small></span></div><div class="framework-track"><span class="framework-fill fill-cis" style="width:86%"></span></div><strong class="framework-score">86%</strong></div>
+                <div class="framework-row"><div class="framework-name"><span class="framework-logo nist-logo">N</span><span><strong>NIST SP 800-53</strong><small>31 of 38 controls met</small></span></div><div class="framework-track"><span class="framework-fill fill-nist" style="width:82%"></span></div><strong class="framework-score">82%</strong></div>
+                <div class="framework-row"><div class="framework-name"><span class="framework-logo stig-logo">S</span><span><strong>DISA STIG</strong><small>28 of 34 controls met</small></span></div><div class="framework-track"><span class="framework-fill fill-stig" style="width:82%"></span></div><strong class="framework-score">82%</strong></div>
+                <div class="framework-row"><div class="framework-name"><span class="framework-logo iso-logo">I</span><span><strong>ISO/IEC 27001</strong><small>24 of 29 controls met</small></span></div><div class="framework-track"><span class="framework-fill fill-iso" style="width:83%"></span></div><strong class="framework-score">83%</strong></div>
+              </div>
+              <div class="chart-footnote"><span class="legend-dot"></span> Matched controls across the latest sample assessment <span class="footnote-date">· 30 Sep 2026</span></div>
+            </article>
+            <article class="surface-card risk-card">
+              <div class="card-heading"><div><span class="section-kicker">RISK TREND</span><h3>Posture over time</h3></div><button class="select-period" aria-label="Showing last 6 scans">Last 6 scans <span>⌄</span></button></div>
+              <div class="risk-summary"><strong>86<span>%</span></strong><span class="metric-change positive">↗ 12 pts</span><small>compliance score</small></div>
+              <div class="line-chart"><div class="chart-y-labels"><span>100</span><span>75</span><span>50</span><span>25</span></div><svg viewBox="0 0 480 126" preserveAspectRatio="none" role="img" aria-label="Compliance score improved from 74 percent to 86 percent over six scans"><defs><linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#43c99a" stop-opacity=".18"/><stop offset="100%" stop-color="#43c99a" stop-opacity="0"/></linearGradient></defs><path class="chart-area" d="M4 88 C40 83 48 76 82 79 S130 90 160 66 S213 70 240 55 S286 70 322 43 S378 57 400 30 S447 35 476 14 L476 126 L4 126Z"/><path class="chart-line" d="M4 88 C40 83 48 76 82 79 S130 90 160 66 S213 70 240 55 S286 70 322 43 S378 57 400 30 S447 35 476 14"/><circle class="chart-point" cx="476" cy="14" r="4"/></svg><div class="chart-x-labels"><span>JUN 04</span><span>JUN 18</span><span>JUL 02</span><span>JUL 16</span><span>JUL 30</span><span>SEP 30</span></div></div>
+            </article>
+          </div>
+
+          <div class="lower-grid">
+            <article class="surface-card devices-card">
+              <div class="card-heading"><div><span class="section-kicker">YOUR ESTATE</span><h3>Recently reviewed devices</h3></div><button class="text-button" data-go="devices">All devices <span>↗</span></button></div>
+              <div class="table-wrap"><table><thead><tr><th>DEVICE</th><th>VENDOR</th><th>POSTURE</th><th>FINDINGS</th><th>LAST SCAN</th><th></th></tr></thead><tbody id="device-preview"></tbody></table></div>
+            </article>
+            <article class="surface-card severity-card">
+              <div class="card-heading"><div><span class="section-kicker">REQUIRES ATTENTION</span><h3>Finding severity</h3></div><span class="severity-total">08 total</span></div>
+              <div class="severity-donut-wrap"><div class="severity-donut"><div><strong>08</strong><small>FINDINGS</small></div></div><div class="severity-legend"><div><span class="sev-dot sev-critical"></span>Critical<strong>01</strong></div><div><span class="sev-dot sev-high"></span>High<strong>03</strong></div><div><span class="sev-dot sev-medium"></span>Medium<strong>03</strong></div><div><span class="sev-dot sev-low"></span>Low<strong>01</strong></div></div></div>
+              <button class="severity-link" data-go="findings">Review all findings <span>→</span></button>
+            </article>
+          </div>
+          <div class="page-footer"><span>AEGIS NETWORK ASSURANCE <span class="footer-sep">/</span> SIH26155 DEMO</span><span>Read-only by design <span class="footer-shield">◈</span></span></div>
+        </section>
+
+        <section class="page-view" id="page-findings">
+          <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span>DETECTION &amp; TRIAGE</div><h1>Findings <span>that matter.</span></h1><p class="page-subtitle">Every issue is tied to its source line, framework controls, and a safe remediation path.</p></div><button class="button button-primary" data-download-report>↓ Download report</button></div>
+          <div class="finding-summary-strip"><div><span class="sev-dot sev-critical"></span><strong id="summary-critical">01</strong> critical</div><div><span class="sev-dot sev-high"></span><strong id="summary-high">03</strong> high</div><div><span class="sev-dot sev-medium"></span><strong id="summary-medium">03</strong> medium</div><div><span class="sev-dot sev-low"></span><strong id="summary-low">01</strong> low</div><span class="summary-spacer"></span><span class="mono summary-scan">SCAN AG-260930-0942</span></div>
+          <article class="surface-card findings-card">
+            <div class="filter-bar"><label class="search-field"><span>⌕</span><input id="finding-search" type="search" placeholder="Search findings, devices, or controls" aria-label="Search findings"></label><select id="severity-filter" aria-label="Filter by severity"><option value="all">All severities</option><option value="critical">Critical</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option></select><select id="framework-filter" aria-label="Filter by framework"><option value="all">All frameworks</option><option value="CIS">CIS Benchmarks</option><option value="NIST">NIST SP 800-53</option><option value="STIG">DISA STIG</option><option value="ISO">ISO/IEC 27001</option></select><span id="finding-result-count" class="result-count">8 findings</span></div>
+            <div class="table-wrap"><table class="findings-table"><thead><tr><th>FINDING</th><th>ASSET</th><th>SEVERITY</th><th>FRAMEWORKS</th><th>DETECTED</th><th></th></tr></thead><tbody id="findings-table-body"></tbody></table><div class="empty-state hidden" id="empty-findings"><span>⌕</span><strong>No findings match those filters</strong><small>Try a different search or clear the selected filters.</small></div></div>
+          </article>
+          <div class="disclaimer-note"><span>i</span> Benchmark references shown are illustrative placeholders. Verify current control mappings against authoritative benchmark publications before operational use.</div>
+        </section>
+
+        <section class="page-view" id="page-devices">
+          <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span>INVENTORY</div><h1>Device <span>inventory.</span></h1><p class="page-subtitle">A normalized, vendor-agnostic snapshot of the sample network estate.</p></div><button class="button button-primary" data-open-scan><span class="button-plus">＋</span> Add configuration</button></div>
+          <div class="inventory-stats"><div class="surface-card inventory-stat"><span class="inventory-stat-icon blue">⌘</span><strong id="inventory-count">24</strong><small>devices monitored</small></div><div class="surface-card inventory-stat"><span class="inventory-stat-icon green">◈</span><strong>04</strong><small>vendor families</small></div><div class="surface-card inventory-stat"><span class="inventory-stat-icon orange">⌁</span><strong>03</strong><small>parser types</small></div><div class="surface-card inventory-stat"><span class="inventory-stat-icon purple">◷</span><strong>09:42</strong><small>last completed scan</small></div></div>
+          <article class="surface-card inventory-card"><div class="card-heading"><div><span class="section-kicker">NORMALIZED CONFIG MODEL</span><h3>Network devices <span class="table-count" id="device-count-label">04 ASSETS</span></h3></div><span class="readonly-badge"><span></span> Snapshot mode</span></div><div class="table-wrap"><table><thead><tr><th>DEVICE</th><th>VENDOR / PLATFORM</th><th>DEVICE TYPE</th><th>STATUS</th><th>OPEN FINDINGS</th><th>LAST SCAN</th></tr></thead><tbody id="device-table-body"></tbody></table></div></article>
+          <div class="privacy-banner"><span class="privacy-banner-icon">◈</span><div><strong>Offline snapshots. No device connections.</strong><p>Configuration analysis runs locally in your browser. This demo does not connect to network devices or send configuration files to a server.</p></div><span class="privacy-banner-check">✓</span></div>
+        </section>
+
+        <section class="page-view" id="page-ai-review">
+          <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span>HUMAN-IN-THE-LOOP</div><h1>AI proposes. <span>You decide.</span></h1><p class="page-subtitle">Unknown syntax can be mapped to the shared model — but never trusted without your confirmation.</p></div><span class="review-count"><span class="sev-dot sev-medium"></span> 1 mapping to review</span></div>
+          <div class="ai-safety-banner"><span class="ai-safety-icon">✳</span><div><strong>Deterministic rules remain the source of truth.</strong><p>AI suggestions only map vendor syntax to normalized fields. They do not make compliance decisions. Unconfirmed mappings are excluded from scan results.</p></div></div>
+          <article class="surface-card mapping-card" id="mapping-card"><div class="mapping-head"><div><span class="section-kicker">PROPOSED FIELD MAPPING <span class="demo-chip">ILLUSTRATIVE</span></span><h3>Juniper Junos · management access</h3></div><span class="confidence-pill"><span></span> 94% confidence</span></div><div class="mapping-flow"><div class="mapping-code"><span class="mapping-label">OBSERVED CONFIG LINE</span><code>set system services telnet</code><small>junos-edge-03.conf · line 18</small></div><span class="mapping-arrow">→</span><div class="mapping-model"><span class="mapping-label">PROPOSED NCM FIELD</span><code>management_plane.<b>telnet_enabled</b></code><small>Boolean · management plane</small></div></div><div class="mapping-context"><span>✳</span><span><strong>Why this mapping?</strong> The command enables the Telnet service in Junos, matching the normalized management-plane field. The standard Telnet rule will evaluate the field only after approval.</span></div><div class="mapping-actions"><button class="button button-primary" id="confirm-mapping">✓ Confirm mapping</button><button class="button button-outline" id="reject-mapping">Reject suggestion</button><span class="mapping-audit-note">Confirmation will be recorded in this demo session.</span></div></article>
+          <div class="ai-pipeline"><span class="section-kicker">SAFE EXTENSION PIPELINE</span><div class="pipeline-steps"><div class="pipeline-step done"><span>01</span><strong>Unknown syntax</strong><small>Line isolated</small></div><span class="pipeline-connector"></span><div class="pipeline-step done"><span>02</span><strong>Schema proposal</strong><small>Confidence scored</small></div><span class="pipeline-connector"></span><div class="pipeline-step current"><span>03</span><strong>Human review</strong><small>Required to proceed</small></div><span class="pipeline-connector"></span><div class="pipeline-step"><span>04</span><strong>Rule evaluation</strong><small>Deterministic only</small></div></div></div>
+          <p class="ai-demo-disclaimer">This screen demonstrates the review workflow with seeded sample data. No live AI model or vendor mapping service is connected.</p>
+        </section>
+
+        <section class="page-view" id="page-reports">
+          <div class="page-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span>AUDIT EVIDENCE</div><h1>Reports, <span>ready to share.</span></h1><p class="page-subtitle">A fixed, repeatable sample report with scope, findings, evidence, and traceable references.</p></div><button class="button button-primary" data-download-report><span>↓</span> Download sample PDF</button></div>
+          <div class="report-cover"><div class="report-cover-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2.8 27 7v8.7c0 7-4.6 11.5-11 14.2C9.6 27.2 5 22.7 5 15.7V7l11-4.2Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m11.2 16.2 3.1 3.1 6.7-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="report-cover-copy"><span class="section-kicker">SAMPLE AUDIT REPORT <span class="demo-chip">FIXED DATASET</span></span><h2>Network Configuration<br>Security Review</h2><p>NTRO · Fictional sample estate · 30 September 2026</p><div class="report-meta"><span>REPORT REF <strong class="mono">DEMO-NTRO-001</strong></span><span>SNAPSHOTS <strong>04</strong></span><span>VENDORS <strong>03</strong></span></div></div><div class="report-score"><small>SEEDED FINDINGS</small><strong>08</strong><span class="report-score-label"><i></i> 01 CRITICAL · 03 HIGH</span></div></div>
+          <div class="report-structure-grid"><article class="surface-card report-section-card"><span class="report-section-number">01</span><div><strong>Executive summary</strong><small>Assessment scope, synthetic severity counts, and method</small></div><span class="report-page-tag">PAGE 01</span></article><article class="surface-card report-section-card"><span class="report-section-number">02</span><div><strong>Framework crosswalk</strong><small>NIST Rev. 5 candidate controls and citation limitations</small></div><span class="report-page-tag">PAGE 02</span></article><article class="surface-card report-section-card"><span class="report-section-number">03</span><div><strong>Findings register</strong><small>Severity, affected asset, source evidence, and references</small></div><span class="report-page-tag">PAGES 03–06</span></article><article class="surface-card report-section-card"><span class="report-section-number">04</span><div><strong>Remediation guidance</strong><small>Vendor-specific recommendations, review before applying</small></div><span class="report-page-tag">PAGES 03–06</span></article></div>
+          <div class="report-disclaimer"><span>i</span><div><strong>About this sample</strong><p>The downloadable PDF always uses the same fixed synthetic findings; uploaded configurations are not included. It makes no compliance percentage claim, omits unvalidated CIS control numbers, and does not assert DISA STIG or ISO/IEC 27001 mappings. It is not an official NTRO assessment.</p></div></div>
+          <button class="button button-outline report-download-bottom" data-download-report>↓ &nbsp;Download sample PDF report</button>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="scan-modal" role="dialog" aria-modal="true" aria-labelledby="scan-modal-title">
+    <div class="modal-card scan-modal-card"><button class="modal-close" data-close-scan aria-label="Close dialog">×</button><div class="modal-eyebrow"><span></span> LOCAL CONFIGURATION AUDIT</div><h2 id="scan-modal-title">Bring a configuration<br><em>into focus.</em></h2><p class="modal-intro">Drop a Cisco IOS or FortiOS snapshot to run a read-only demo scan. Your file is processed locally and never uploaded.</p><label for="config-file" class="upload-zone" id="upload-zone"><input type="file" id="config-file" accept=".txt,.cfg,.conf,.log"><span class="upload-icon">↑</span><strong>Drop a configuration file here</strong><small>or <span>browse your files</span> · .txt, .cfg, .conf</small></label><div class="upload-privacy"><span>◈</span> Local-only processing <i></i> Max file size 2 MB</div><div id="scan-result" class="scan-result hidden"></div></div>
+  </div>
+  <div class="modal-backdrop hidden" id="detail-modal" role="dialog" aria-modal="true" aria-labelledby="detail-title"><div class="modal-card detail-modal-card"><button class="modal-close" id="close-detail" aria-label="Close dialog">×</button><div id="detail-content"></div></div></div>
+  <div class="toast hidden" id="toast" role="status"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

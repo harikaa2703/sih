@@ -1,0 +1,50 @@
+AEGIS — TWO-MINUTE PROTOTYPE VIDEO
+Approximate runtime: 2 minutes
+Style: product walkthrough with screen recording and voiceover
+
+00:00–00:12 | OPEN — Dashboard
+ON SCREEN: Open the Aegis dashboard. Briefly show the workspace and sample-data notice.
+VOICEOVER:
+"Network teams manage equipment from different vendors, each with its own configuration syntax. Reviewing those configurations against security guidance by hand takes time and can make it harder to see risk consistently. This is Aegis, a prototype for a clearer, vendor-aware review."
+
+00:12–00:29 | AT A GLANCE — Dashboard
+ON SCREEN: Show the sample inventory, finding totals, framework-alignment cards, and trend chart.
+VOICEOVER:
+"The dashboard brings example devices and findings into one view. It shows an illustrative network posture, severity breakdown, and framework-alignment overview. These numbers are seeded sample data for the prototype—not results from a real NTRO network or a completed benchmark assessment."
+
+00:29–00:47 | DEVICE INVENTORY
+ON SCREEN: Select Devices. Point out vendors, device types, status, and the snapshot-mode privacy note.
+VOICEOVER:
+"In the inventory, sample Cisco, Fortinet, and Arista devices are presented in a common view. The idea follows the PRD's central design: keep vendor-specific configuration parsing separate from the shared model used to reason about security. This demo works with offline snapshots; it does not log in to network equipment."
+
+00:47–01:08 | FINDINGS — Evidence and guidance
+ON SCREEN: Open Findings, filter to a severity, select the Telnet finding, and show evidence, references, and remediation.
+VOICEOVER:
+"Each example finding has a severity, affected device, explanation, and suggested next step. Open a finding to see the configuration evidence and line reference, along with candidate NIST control relationships. The references are for review, not an official certification. Recommendations must be checked against the device and approved before anyone applies them."
+
+01:08–01:25 | CONFIGURATION UPLOAD
+ON SCREEN: Open Add Configuration. Select a small Cisco IOS or FortiOS text snapshot. Show the local scan result.
+VOICEOVER:
+"The upload screen demonstrates a small set of explicit checks on a Cisco IOS or FortiOS text snapshot. The file is read locally in your browser and is not sent to the backend. This is a limited prototype scan: a finding can point to a detected source line, but no findings does not mean a device is compliant."
+
+01:25–01:42 | HUMAN REVIEW
+ON SCREEN: Open AI review. Show the example Junos mapping and click Confirm mapping.
+VOICEOVER:
+"The AI review screen illustrates how an unfamiliar vendor mapping could be proposed with a confidence score and held for a person to review. Here, the suggestion is seeded demo data—there is no live AI model connected. The safety principle is the important part: an unconfirmed mapping cannot be trusted, and compliance decisions should remain deterministic."
+
+01:42–01:57 | REPORT — Download and preview
+ON SCREEN: Open Reports. Show the report sections and click Download sample PDF.
+VOICEOVER:
+"Finally, the report preview shows the intended audit structure: scope and method, severity totals, a framework crosswalk, findings, evidence, and remediation guidance. The downloadable six-page PDF uses the same fixed synthetic dataset each time. It avoids unverified benchmark IDs and does not claim a compliance score."
+
+01:57–02:00 | CLOSE
+ON SCREEN: Return to the dashboard. Show the Aegis mark.
+VOICEOVER:
+"Aegis: a clearer starting point for explainable, multi-vendor security reviews."
+
+PRODUCTION NOTES
+- Keep the on-screen demo notice visible where practical; identify sample values as illustrative.
+- Do not describe seeded dashboard scores as measured or certified compliance.
+- The upload scanner has limited signatures, supports Cisco IOS/FortiOS demo cases, and is not a complete auditor.
+- The Junos review mapping is illustrative only; the prototype does not call an AI service.
+- Do not present this prototype as an official NTRO system, production security assessment, or a substitute for benchmark validation.
